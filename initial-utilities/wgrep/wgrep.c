@@ -7,9 +7,11 @@ int main(int argc, char *argv[]){
         exit(1);
     }
     else if(argc == 2){
-        char search[] = argv[1];
+        char term = argv[1];
+        char search[sizeof(term)] = term;
+        
         int lensearch = sizeof(search);
-        char str[];
+        char str[1];
         scanf("%s", str);
         for(int j = 0; j<sizeof(str); j++){
             if(str[j] == search[0]){
@@ -26,7 +28,7 @@ int main(int argc, char *argv[]){
             }
         }
     }
-    else{  \\for multiple files
+    else{
         if(argv[1] == ""){
             char buffer[1000];
             while(fgets(buffer, 1000, fp)){
