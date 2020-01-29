@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
             char *line;
             ssize_t numchar;
             size_t length = 0;
-            while((numchar = getline(&line, &len, fp)) != -1){
+            while((numchar = getline(&line, &length, fp)) != -1){
                 char *found;
                 found = strstr(line, search);
                 if(found != NULL){
