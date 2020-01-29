@@ -35,8 +35,8 @@ int main(int argc, char *argv[]){
             }
             exit(0);
         }
-        for(int i = 3; i<argc; i++){
-            FILE *fp = fopen(argv[i+1], "r");
+        for(int i = 2; i<argc; i++){
+            FILE *fp = fopen(argv[i], "r");
             if (fp == NULL) {
                 printf("wcat: cannot open file\n");
                 exit(1);
