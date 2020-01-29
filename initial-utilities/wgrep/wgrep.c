@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc, char *argv[]){
     if(argc == 1){
@@ -12,11 +13,9 @@ int main(int argc, char *argv[]){
         char *search = argv[1];
         char *line;
         int numchar;
-        while((numchar = getline(*line, 0, fp)) != -1){
-            char *found = strstr(line, search);
-            if(found != NULL){
-                printf("%p", line);
-            }
+        char *found = strstr(line, search);
+        if(found != NULL){
+            printf("%p", line);
         }
     }
     else{
@@ -44,8 +43,9 @@ int main(int argc, char *argv[]){
             char *search = argv[1];
             char *line;
             int numchar;
-            while((numchar = getline(*line, 0, fp)) != -1){
-                char *found = strstr(line, search);
+            while((numchar = getline(line, 0, fp)) != -1){
+                char *found;
+                found = strstr(line, search);
                 if(found != NULL){
                     printf("%p", line);
                 }
