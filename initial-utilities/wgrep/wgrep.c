@@ -7,12 +7,28 @@ int main(int argc, char *argv[]){
         exit(1);
     }
     else if(argc == 2){
-        char search = argv[1];
-        \\read from stdin
+        char search[] = argv[1];
+        int lensearch = sizeof(search);
+        char str[];
+        scanf("%s", str);
+        for(int j = 0; j<sizeof(str); j++){
+            if(str[j] == search[0]){
+                int k=0;
+                while(k<lensearch){
+                    if(str[j+k] != search[k]){
+                        break;
+                    }
+                    if(k == lensearch-1){
+                        printf("%s", str);
+                    }
+                    k++;
+                }
+            }
+        }
     }
     else{  \\for multiple files
-        if(argv[1] == ""){        \\if search term is empty
-            char buffer[1000];     \\print all lines
+        if(argv[1] == ""){
+            char buffer[1000];
             while(fgets(buffer, 1000, fp)){
                 printf("%s", buffer);
             }
@@ -31,13 +47,17 @@ int main(int argc, char *argv[]){
             int numchar;
             while((numchar = getline(line, 0, fp)) != -1){
                 for(int j = 0; j<numchar; j++){
-                    if(line[0] == search[0]){
-                        for(int k = 0; k < lensearch){
-                            
+                    if(line[j] == search[0]){
+                        int k=0;
+                        while(k<lensearch){
+                            if(line[j+k] != search[k]){
+                                break;
+                            }
+                            if(k == lensearch-1){
+                                printf("%s", line);
+                            }
+                            k++;
                         }
-                    }
-                    else{
-
                     }
                 }
             }            
@@ -45,5 +65,4 @@ int main(int argc, char *argv[]){
         }
         exit(0);
     }
-
 }
