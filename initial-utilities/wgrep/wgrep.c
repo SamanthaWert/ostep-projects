@@ -10,7 +10,8 @@ int main(int argc, char *argv[]){
     else if(argc == 2){
         char *str;
         scanf("%s", str);
-        char *search = argv[1];
+        char *search;
+        search = argv[1];
         char *line;
         int numchar;
         char *found = strstr(line, search);
@@ -40,7 +41,8 @@ int main(int argc, char *argv[]){
                 printf("wcat: cannot open file\n");
                 exit(1);
             }
-            char *search = argv[1];
+            char *search;
+            search = argv[1];
             char *line;
             ssize_t numchar;
             size_t length = 0;
