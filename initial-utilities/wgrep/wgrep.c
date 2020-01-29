@@ -52,7 +52,7 @@ int main(int argc, char *argv[]){
             }
             char search[] = argv[1];
             int lensearch = sizeof(search);
-            char line[] = "";
+            char *line[] = "";
             int numchar;
             while((numchar = getline(line, 0, fp)) != -1){
                 for(int j = 0; j<numchar; j++){
