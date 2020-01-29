@@ -47,7 +47,7 @@ int main(int argc, char *argv[]){
             ssize_t numchar;
             size_t length = 0;
             while((numchar = getline(&line, &length, fp)) != -1){
-                char *found;
+                char *found = NULL;
                 found = strstr(line, search);
                 if(found != NULL){
                     printf("%p", line);
