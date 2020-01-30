@@ -50,7 +50,7 @@ int main(int argc, char *argv[]){
                     found = strstr(line, search);
                     if(found != NULL){
                         for(size_t s = 0; s<length; s++){
-                            printf("%s", *line);
+                            printf("%s", line);
                         }
                     }
                 }            
