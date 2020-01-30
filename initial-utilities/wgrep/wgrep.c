@@ -9,7 +9,7 @@ int main(int argc, char *argv[]){
     }
     else if(argc == 2){
         char *str;
-        scanf("%s", str);
+        scanf("%s", &str);
         char *search;
         search = argv[1];
         char *found = NULL;
