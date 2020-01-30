@@ -8,8 +8,8 @@ int main(int argc, char *argv[]){
         exit(1);
     }
     else if(argc == 2){
-        char *str;
-        scanf("%s", &str);
+        char *str = NULL;
+        scanf("%s", str);
         char *search;
         search = argv[1];
         char *found = NULL;
