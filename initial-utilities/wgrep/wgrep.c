@@ -10,7 +10,7 @@ int main(int argc, char *argv[]){
     else if(argc == 2){
         char *str = NULL;
         scanf("%s", str);
-        char *search;
+        char *search = NULL;
         search = argv[1];
         char *found = NULL;
         found = strstr(str, search);
