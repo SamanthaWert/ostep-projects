@@ -48,9 +48,9 @@ int main(int argc, char *argv[]){
                 char *found = NULL;
                 found = strstr(line, search);
                 if(found != NULL){
-                    for(size s = 0; s<length; s++){
+                    for(size_t s = 0; s<length; s++){
                         printf("%c", *line);
-                        (*s)++;
+                        (*line)++;
                     }
                 }
             }            
