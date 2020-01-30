@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int counts(const char* line, char c);
+int counts(char *line, char c);
 
 int main(int argc, char *argv[]){
     int counter[26]; //where fwrite will read from
@@ -73,7 +73,7 @@ int main(int argc, char *argv[]){
     fwrite(counter, size, items, fp);
 }
 
-int counts(const char* line, char c){
+int counts(char *line, char c){
     int times = 0;
     int linelen = strlen(line);
     for(int i=0; i<linelen; i++){
