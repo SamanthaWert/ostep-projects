@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[]){
+int counter(const char* line, char c)
+
+    int main(int argc, char *argv[]){
     int counter[26]; //where fwrite will read from
     size_t items = 0; //number of items of data
     size_t size = 5; //four byte binary and char
