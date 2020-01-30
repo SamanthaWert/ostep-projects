@@ -50,7 +50,7 @@ int main(int argc, char *argv[]){
                 if(found != NULL){
                     for(size_t s = 0; s<length; s++){
                         printf("%c", *line);
-                        (*line)++;
+                        (line)++;
                     }
                 }
             }            
