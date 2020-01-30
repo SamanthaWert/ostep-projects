@@ -12,7 +12,8 @@ int main(int argc, char *argv[]){
         scanf("%s", str);
         char *search;
         search = argv[1];
-        char *found = strstr(str, search);
+        char *found = NULL;
+        found = strstr(str, search);
         if(found != NULL){
             printf("%s", str);
         }
