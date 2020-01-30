@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
         search = argv[1];
         char *found = strstr(str, search);
         if(found != NULL){
-            printf("%s", *str);
+            printf("%c", *str);
         }
     }
     else{
@@ -48,7 +48,7 @@ int main(int argc, char *argv[]){
                 char *found = NULL;
                 found = strstr(line, search);
                 if(found != NULL){
-                    printf("%s\n", *line);
+                    printf("%c\n", *line);
                 }
             }            
             fclose(fp);
