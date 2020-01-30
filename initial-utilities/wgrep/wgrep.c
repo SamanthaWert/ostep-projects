@@ -12,11 +12,9 @@ int main(int argc, char *argv[]){
         scanf("%s", str);
         char *search;
         search = argv[1];
-        char *line;
-        int numchar;
-        char *found = strstr(line, search);
+        char *found = strstr(str, search);
         if(found != NULL){
-            printf("%p", (void *)line);
+            printf("%p", str);
         }
     }
     else{
@@ -43,14 +41,14 @@ int main(int argc, char *argv[]){
             }
             char *search;
             search = argv[1];
-            char *line;
+            char *line = NULL;
             ssize_t numchar;
             size_t length = 0;
             while((numchar = getline(&line, &length, fp)) != -1){
                 char *found = NULL;
                 found = strstr(line, search);
                 if(found != NULL){
-                    printf("%p", (void *)line);
+                    printf("%p\n", line);
                 }
             }            
             fclose(fp);
