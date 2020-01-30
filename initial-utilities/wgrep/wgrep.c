@@ -33,28 +33,29 @@ int main(int argc, char *argv[]){
             }
             exit(0);
         }
-        for(int i = 2; i<argc; i++){
-            FILE *fp = fopen(argv[i], "r");
-            if (fp == NULL) {
-                printf("wcat: cannot open file\n");
-                exit(1);
-            }
-            char *search;
-            search = argv[1];
-            char *line = NULL;
-            ssize_t numchar;
-            size_t length = 0;
-            while((numchar = getline(&line, &length, fp)) != -1){
-                char *found = NULL;
-                found = strstr(line, search);
-                if(found != NULL){
-                    for(size_t s = 0; s<length; s++){
-                        printf("%c", *line);
-                        (line)++;
-                    }
+        else{
+            for(int i = 2; i<argc; i++){
+                FILE *fp = fopen(argv[i], "r");
+                if (fp == NULL) {
+                    printf("wcat: cannot open file\n");
+                    exit(1);
                 }
-            }            
-            fclose(fp);
+                char *search;
+                search = argv[1];
+                char *line = NULL;
+                ssize_t numchar;
+                size_t length = 0;
+                while((numchar = getline(&line, &length, fp)) != -1){
+                    char *found = NULL;
+                    found = strstr(line, search);
+                    if(found != NULL){
+                        for(size_t s = 0; s<length; s++){
+                            printf("%s", *line);
+                        }
+                    }
+                }            
+                fclose(fp);
+            }
         }
         exit(0);
     }
