@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int counts(const char* line, char c);
 
@@ -77,8 +78,8 @@ int counts(const char* line, char c){
     int linelen = strlen(line);
     for(int i=0; i<linelen; i++){
         if(line[i] == c){
-            count = count+1;
+            times = times + 1;
         }
     }
-    return count;
+    return times;
 }
